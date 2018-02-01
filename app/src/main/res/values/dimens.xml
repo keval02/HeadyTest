@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="marginTop">5dp</dimen>
+    <dimen name="indicatorHeight">50dp</dimen>
+    <dimen name="loaderText">18sp</dimen>
+
+
+</resources>
