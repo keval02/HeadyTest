@@ -46,8 +46,9 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         size = variantsArrayList.get(position).getSize();
         price = variantsArrayList.get(position).getPrice();
 
+        String nullable = null ;
 
-        if (color.isEmpty()) {
+        if (color.equals(nullable) ||color.isEmpty()) {
             holder.txtColor.setVisibility(View.GONE);
         } else {
             holder.txtColor.setVisibility(View.VISIBLE);
@@ -55,7 +56,7 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         }
 
 
-        if (size.isEmpty()) {
+        if (size.equals(nullable) || size.isEmpty()) {
             holder.txtSize.setVisibility(View.GONE);
         } else {
             holder.txtSize.setVisibility(View.VISIBLE);
@@ -63,7 +64,7 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         }
 
 
-        if (price.isEmpty()) {
+        if ( price.equals(nullable) || price.isEmpty()) {
             holder.txtPrice.setVisibility(View.GONE);
         } else {
             holder.txtPrice.setVisibility(View.VISIBLE);
