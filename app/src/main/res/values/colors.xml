@@ -6,7 +6,10 @@
 
     <color name="loadingColor">#FFFFFF</color>
     <color name="colorGrey">#EBEBEB</color>
+    <color name="dividerGrey">#757575</color>
 
     <color name="white">#FFFFFF</color>
     <color name="toast">#404F92</color>
+    <color name="toolbarBack">#404F92</color>
+    <color name="textColor">#757575</color>
 </resources>

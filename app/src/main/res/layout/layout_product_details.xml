@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/cardCorner"
+    app:cardElevation="@dimen/cardCorner">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:padding="@dimen/textPadding"
+            android:layout_margin="@dimen/margin"
+            android:id="@+id/txt_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/normalText"/>
+
+
+        <TextView
+            android:padding="@dimen/textPadding"
+            android:layout_margin="@dimen/margin"
+            android:id="@+id/txt_size"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/normalText"/>
+
+
+        <TextView
+            android:padding="@dimen/textPadding"
+            android:layout_margin="@dimen/margin"
+            android:id="@+id/txt_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/normalText"/>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

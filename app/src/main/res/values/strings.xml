@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">HeadyTest</string>
+    <string name="app_name">Heady Test</string>
     <string name="loading">Loading...</string>
+    <string name="toolbarTitle">Heady Test</string>
+    <string name="category">Categories</string>
+    <string name="productDetails">Product Details</string>
 </resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey"
+    tools:context="com.heady.test.ProductListActivity">
+
+    <include layout="@layout/layout_custom_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:elevation="@dimen/toolBarElevation"
+        android:background="@color/colorPrimary">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true" />
+
+    </LinearLayout>
+    
+    
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/titleTextHeight"
+            android:gravity="center"
+            android:text="@string/productDetails"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/toolbarText"
+            android:textStyle="bold"/>
+
+
+
+
+    
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_productdetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="true" />
+
+</LinearLayout>

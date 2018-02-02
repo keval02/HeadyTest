@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGrey"
+    android:orientation="vertical"
     tools:context="com.heady.test.HomeActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/layout_custom_toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleTextHeight"
+        android:gravity="center"
+        android:text="@string/category"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/titleText"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dividerGrey" />
+
+
+    <ListView
+        android:id="@+id/list_mainCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:divider="@color/dividerGrey"
+        android:dividerHeight="0.5dp"
+        android:smoothScrollbar="true"></ListView>
+
+
+</LinearLayout>

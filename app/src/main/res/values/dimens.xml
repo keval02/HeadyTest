@@ -4,6 +4,21 @@
     <dimen name="marginTop">5dp</dimen>
     <dimen name="indicatorHeight">50dp</dimen>
     <dimen name="loaderText">18sp</dimen>
+    <dimen name="toolbarText">18sp</dimen>
+    <dimen name="listHeight">40dp</dimen>
+    <dimen name="marginLeft">20dp</dimen>
+    <dimen name="marginRight">5dp</dimen>
+    <dimen name="textPadding">5dp</dimen>
+    <dimen name="titleTextHeight">45dp</dimen>
+    <dimen name="titleText">20sp</dimen>
+
+    <dimen name="toolBarElevation">5dp</dimen>
+    <dimen name="smallText">12sp</dimen>
+    <dimen name="recycler">100dp</dimen>
+    <dimen name="cardCorner">5dp</dimen>
+    <dimen name="normalText">16sp</dimen>
+    <dimen name="margin">5dp</dimen>
+    <dimen name="checkbox">45dp</dimen>
 
 
 </resources>

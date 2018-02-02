@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/marginRight"
+    android:background="@drawable/background"
+    android:elevation="@dimen/toolBarElevation"
+    android:fadingEdgeLength="@dimen/toolBarElevation">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_width="@dimen/recycler"
+            android:layout_height="@dimen/recycler" />
+
+
+        <TextView
+            android:id="@+id/txt_productName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="3"
+            android:padding="@dimen/textPadding"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/smallText" />
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

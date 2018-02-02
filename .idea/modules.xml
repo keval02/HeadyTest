@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HeadyTest.iml" filepath="$PROJECT_DIR$/HeadyTest.iml" />
+      <module fileurl="file://D:\Keval\MyAndroidStudioProjects\HeadyTest\HeadyTest.iml" filepath="D:\Keval\MyAndroidStudioProjects\HeadyTest\HeadyTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Keval\MyAndroidStudioProjects\HeadyTest\app\app.iml" filepath="D:\Keval\MyAndroidStudioProjects\HeadyTest\app\app.iml" />
     </modules>
   </component>
 </project>

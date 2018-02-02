@@ -1,11 +1,15 @@
 package com.heady.test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 import com.google.gson.Gson;
+import com.heady.test.adapter.CategoryAdapter;
+import com.heady.test.allinterface.CategoryListInterface;
 import com.heady.test.apis.AdminAPI;
 import com.heady.test.apis.ServiceGenerator;
 import com.heady.test.constant.AppPreference;
@@ -21,13 +25,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements CategoryListInterface {
 
     AdminAPI adminAPI;
-    AppPreference appPreference ;
-    CustomProgressDialog progressDialog ;
+    AppPreference appPreference;
+    CustomProgressDialog progressDialog;
 
     List<JsonDataModel.Categories> categoriesList = new ArrayList<>();
+    ListView listMainCategory;
+    CategoryAdapter categoryAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +46,14 @@ public class HomeActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
 
 
-
         fetchIds();
     }
 
     private void fetchIds() {
 
+        listMainCategory = (ListView) findViewById(R.id.list_mainCategory);
+        categoryAdapter = new CategoryAdapter(categoriesList, getApplicationContext(), this);
+        listMainCategory.setAdapter(categoryAdapter); // Set Adapter To CategoryListInterface
 
 
         GetAllDatas();    //Function For Calling API
@@ -59,26 +67,20 @@ public class HomeActivity extends AppCompatActivity {
             public void onResponse(Call<JsonDataModel> call, Response<JsonDataModel> response) {
                 progressDialog.dismiss();
                 JsonDataModel dataModel = response.body();
-                Log.e("response" , "->" + new Gson().toJson(dataModel));
-                if(dataModel!=null){
-
+                if (dataModel != null) {
                     categoriesList.addAll(dataModel.getCategories());
-
-                    Log.e("listSize" , "->" + categoriesList.size());
-
-                }else {
+                } else {
                     Global.defaultError(getApplicationContext());
                 }
+                categoryAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onFailure(Call<JsonDataModel> call, Throwable t) {
                 progressDialog.dismiss();
-                Global.errorToast(getApplicationContext() , t);
+                Global.errorToast(getApplicationContext(), t);
             }
         });
-
-
     }
 
 
@@ -86,4 +88,13 @@ public class HomeActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
+    @Override
+    public void onClick(int position) {
+        Intent intent = new Intent(getApplicationContext(), ProductListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("categoryProducts", categoriesList.get(position));
+        startActivity(intent);
+    }
+
 }

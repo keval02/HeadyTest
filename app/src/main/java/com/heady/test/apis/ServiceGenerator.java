@@ -35,7 +35,7 @@ public class ServiceGenerator {
 
     private static OkHttpClient getRequestHeader() {
 
-        OkHttpClient httpClient = new OkHttpClient().newBuilder().connectTimeout(30, TimeUnit.SECONDS).readTimeout(30, TimeUnit.SECONDS).build();
+        OkHttpClient httpClient = new OkHttpClient().newBuilder().connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS).build();
 
         return httpClient;
     }
