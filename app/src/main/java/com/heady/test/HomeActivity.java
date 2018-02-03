@@ -2,9 +2,11 @@ package com.heady.test;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.heady.test.adapter.CategoryAdapter;
 import com.heady.test.allinterface.CategoryListInterface;
@@ -24,6 +26,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends AppCompatActivity implements CategoryListInterface {
 
+    TextView txt_labelCategory ;
     AdminAPI adminAPI;
     CustomProgressDialog progressDialog;
 
@@ -50,6 +53,9 @@ public class HomeActivity extends AppCompatActivity implements CategoryListInter
         categoryAdapter = new CategoryAdapter(categoriesList, getApplicationContext(), this);
         listMainCategory.setAdapter(categoryAdapter); // Set Adapter To CategoryListInterface
 
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/Raleway_Bold.ttf");
+        txt_labelCategory = (TextView) findViewById(R.id.txt_labelCategory);
+        txt_labelCategory.setTypeface(myTypeface);
 
         GetAllDatas();    //Function For Calling API
     }

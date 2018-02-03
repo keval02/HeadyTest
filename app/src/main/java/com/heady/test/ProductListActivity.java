@@ -1,5 +1,6 @@
 package com.heady.test;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class ProductListActivity extends AppCompatActivity implements CategoryListInterface {
 
@@ -107,5 +110,10 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
 
         }
         productDetailsAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

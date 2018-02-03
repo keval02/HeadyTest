@@ -1,6 +1,7 @@
 package com.heady.test.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,9 @@ public class CategoryAdapter extends BaseAdapter {
 
         View view = inflater.inflate(R.layout.layout_category_list, parent, false);
 
+        Typeface myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/Raleway_Regular.ttf");
         TextView txtCategoryName = (TextView) view.findViewById(R.id.txt_categoryName);
+        txtCategoryName.setTypeface(myTypeface);
 
         String categoryName = "";
         categoryName = categoriesList.get(position).getName();
@@ -73,6 +76,8 @@ public class CategoryAdapter extends BaseAdapter {
 
         return view;
     }
+
+
 
 
 }

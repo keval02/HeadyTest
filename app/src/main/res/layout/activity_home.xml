@@ -11,6 +11,7 @@
     <include layout="@layout/layout_custom_toolbar" />
 
     <TextView
+        android:id="@+id/txt_labelCategory"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleTextHeight"
         android:gravity="center"

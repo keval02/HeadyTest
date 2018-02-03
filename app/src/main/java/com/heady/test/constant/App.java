@@ -17,7 +17,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("assets/Raleway_Regular.ttf")
+                .setDefaultFontPath("fonts/Raleway_Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
