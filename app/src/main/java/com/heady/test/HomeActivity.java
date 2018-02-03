@@ -4,15 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
-import com.google.gson.Gson;
 import com.heady.test.adapter.CategoryAdapter;
 import com.heady.test.allinterface.CategoryListInterface;
 import com.heady.test.apis.AdminAPI;
 import com.heady.test.apis.ServiceGenerator;
-import com.heady.test.constant.AppPreference;
 import com.heady.test.constant.Global;
 import com.heady.test.helper.CustomProgressDialog;
 import com.heady.test.model.JsonDataModel;
@@ -28,7 +25,6 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class HomeActivity extends AppCompatActivity implements CategoryListInterface {
 
     AdminAPI adminAPI;
-    AppPreference appPreference;
     CustomProgressDialog progressDialog;
 
     List<JsonDataModel.Categories> categoriesList = new ArrayList<>();
@@ -41,7 +37,6 @@ public class HomeActivity extends AppCompatActivity implements CategoryListInter
         setContentView(R.layout.activity_home);
 
         adminAPI = ServiceGenerator.getAPIClass();
-        appPreference = new AppPreference(getApplicationContext());
         progressDialog = new CustomProgressDialog(HomeActivity.this);
         progressDialog.setCancelable(false);
 

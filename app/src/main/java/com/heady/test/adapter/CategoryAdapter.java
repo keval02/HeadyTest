@@ -54,7 +54,15 @@ public class CategoryAdapter extends BaseAdapter {
 
         TextView txtCategoryName = (TextView) view.findViewById(R.id.txt_categoryName);
 
-        txtCategoryName.setText(categoriesList.get(position).getName());
+        String categoryName = "";
+        categoryName = categoriesList.get(position).getName();
+
+        if(categoryName == null || categoryName.equalsIgnoreCase(null) || categoryName.equalsIgnoreCase("null") || categoryName.isEmpty()){
+            txtCategoryName.setText("");
+        }else {
+            txtCategoryName.setText(categoriesList.get(position).getName());
+        }
+
 
         txtCategoryName.setOnClickListener(new View.OnClickListener() {
             @Override

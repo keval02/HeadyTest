@@ -54,7 +54,7 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
             holder.txtColor.setText("Color : " + color);
         }
 
-        if (size == null || size.equalsIgnoreCase(null) || size.equalsIgnoreCase("null")  || size.isEmpty()) {
+        if (size == null || size.equalsIgnoreCase(null) || size.equalsIgnoreCase("null") || size.isEmpty()) {
             holder.txtSize.setVisibility(View.GONE);
         } else {
             holder.txtSize.setVisibility(View.VISIBLE);

@@ -21,13 +21,13 @@ import java.util.List;
 public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.MyViewHolder> {
 
     List<JsonDataModel.Categories> categoriesList = new ArrayList<>();
-    Context context ;
-    CategoryListInterface categoryListInterface ;
+    Context context;
+    CategoryListInterface categoryListInterface;
 
-    public ProductListAdapter(List<JsonDataModel.Categories> categoriesList, Context context , CategoryListInterface categoryListInterface) {
+    public ProductListAdapter(List<JsonDataModel.Categories> categoriesList, Context context, CategoryListInterface categoryListInterface) {
         this.categoriesList = categoriesList;
         this.context = context;
-        this.categoryListInterface = categoryListInterface ;
+        this.categoryListInterface = categoryListInterface;
     }
 
     @Override
@@ -41,7 +41,13 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         String productName = "";
         productName = categoriesList.get(0).getProducts().get(position).getName();
-        holder.txtProductName.setText(productName);
+        if (productName == null || productName.equalsIgnoreCase(null) || productName.equalsIgnoreCase("null") || productName.isEmpty()) {
+            holder.txtProductName.setText("");
+        } else {
+            holder.txtProductName.setText(productName);
+        }
+
+
         holder.txtProductName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +64,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtProductName ;
+        TextView txtProductName;
 
         public MyViewHolder(View itemView) {
             super(itemView);
