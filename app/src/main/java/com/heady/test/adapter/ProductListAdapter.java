@@ -55,6 +55,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             }
         });
         categoryListInterface.onClick(0);
+
     }
 
     @Override
