@@ -13,11 +13,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <View
             android:layout_width="@dimen/recycler"
             android:layout_height="@dimen/recycler" />
-
 
         <TextView
             android:id="@+id/txt_productName"

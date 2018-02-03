@@ -7,6 +7,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.heady.test.adapter.ProductDetailsAdapter;
 import com.heady.test.adapter.ProductListAdapter;
@@ -31,6 +34,9 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
 
     List<ProductDetailsModel.Variants> variantsList = new ArrayList<>();
 
+    TextView txt_productName ;
+
+    LinearLayout layoutMain , layoutNodata ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +51,11 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
     }
 
     private void fetchIds() {
+
+        layoutMain = (LinearLayout) findViewById(R.id.layout_main);
+        layoutNodata = (LinearLayout) findViewById(R.id.layout_nodata);
+
+        txt_productName = (TextView) findViewById(R.id.txt_productName);
 
         recyclerProductList = (RecyclerView) findViewById(R.id.recyclerview_products);
         recyclerProductDetails = (RecyclerView) findViewById(R.id.recyclerview_productdetails);
@@ -71,11 +82,25 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
         for(int i=0 ; i<categories.getProducts().size();i++){
             categoriesList.add(categories);
         }
+
+        if(categories.getProducts().size()==0){
+            layoutMain.setVisibility(View.GONE);
+            layoutNodata.setVisibility(View.VISIBLE);
+        }
+
+
         productListAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onClick(int position) {
+        String productName = "";
+        productName = categoriesList.get(0).getProducts().get(position).getName();
+        if(productName!=null || !productName.equalsIgnoreCase("null") ||!productName.isEmpty()){
+            txt_productName.setText(productName);
+        }else {
+            txt_productName.setText("Product Details");
+        }
         variantsList.clear();
         for(int i=0 ; i < categoriesList.get(0).getProducts().get(position).getVariants().size();i++){
             variantsList.add(categoriesList.get(0).getProducts().get(position).getVariants().get(i));

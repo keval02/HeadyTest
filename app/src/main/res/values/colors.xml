@@ -12,4 +12,6 @@
     <color name="toast">#404F92</color>
     <color name="toolbarBack">#404F92</color>
     <color name="textColor">#757575</color>
+
+    <color name="edittextbackground">#E0E0E0</color>
 </resources>

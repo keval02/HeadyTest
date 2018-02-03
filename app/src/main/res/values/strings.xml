@@ -4,4 +4,6 @@
     <string name="toolbarTitle">Heady Test</string>
     <string name="category">Categories</string>
     <string name="productDetails">Product Details</string>
+    <string name="retry">Retry</string>
+    <string name="ohno">Oh No ! \n \n  No Products are available in this Category . </string>
 </resources>

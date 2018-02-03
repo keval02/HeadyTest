@@ -2,6 +2,7 @@ package com.heady.test.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,32 +47,26 @@ public class ProductDetailsAdapter extends RecyclerView.Adapter<ProductDetailsAd
         size = variantsArrayList.get(position).getSize();
         price = variantsArrayList.get(position).getPrice();
 
-        String nullable = null ;
-
-        if (color.equals(nullable) ||color.isEmpty()) {
+        if (color == null || color.equalsIgnoreCase(null) || color.equalsIgnoreCase("null") || color.isEmpty()) {
             holder.txtColor.setVisibility(View.GONE);
         } else {
             holder.txtColor.setVisibility(View.VISIBLE);
             holder.txtColor.setText("Color : " + color);
         }
 
-
-        if (size.equals(nullable) || size.isEmpty()) {
+        if (size == null || size.equalsIgnoreCase(null) || size.equalsIgnoreCase("null")  || size.isEmpty()) {
             holder.txtSize.setVisibility(View.GONE);
         } else {
             holder.txtSize.setVisibility(View.VISIBLE);
             holder.txtSize.setText("Size : " + size);
         }
 
-
-        if ( price.equals(nullable) || price.isEmpty()) {
+        if (price == null || price.equalsIgnoreCase(null) || price.equalsIgnoreCase("null") || price.isEmpty()) {
             holder.txtPrice.setVisibility(View.GONE);
         } else {
             holder.txtPrice.setVisibility(View.VISIBLE);
             holder.txtPrice.setText("Price : " + price);
         }
-
-
     }
 
     @Override

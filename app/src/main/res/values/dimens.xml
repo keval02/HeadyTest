@@ -19,6 +19,7 @@
     <dimen name="normalText">16sp</dimen>
     <dimen name="margin">5dp</dimen>
     <dimen name="checkbox">45dp</dimen>
-
+    <dimen name="normalmargin">10dp</dimen>
+<dimen name="image">80dp</dimen>
 
 </resources>
