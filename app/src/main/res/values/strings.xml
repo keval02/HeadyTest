@@ -6,4 +6,11 @@
     <string name="productDetails">Product Details</string>
     <string name="retry">Retry</string>
     <string name="ohno">Oh No ! \n \n  No Products are available in this Category . </string>
+
+
+
+
+    //Validation Strings
+
+    <string name="nodata">No Products are available in this Category.</string>
 </resources>

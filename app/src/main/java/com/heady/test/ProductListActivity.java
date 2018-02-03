@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.heady.test.adapter.ProductDetailsAdapter;
 import com.heady.test.adapter.ProductListAdapter;
 import com.heady.test.allinterface.CategoryListInterface;
+import com.heady.test.constant.Global;
 import com.heady.test.model.JsonDataModel;
 import com.heady.test.model.ProductDetailsModel;
 
@@ -37,7 +38,7 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
 
     List<ProductDetailsModel.Variants> variantsList = new ArrayList<>();
 
-    TextView txt_productName ;
+    TextView txt_productName , txt_try ;
 
     LinearLayout layoutMain , layoutNodata ;
     @Override
@@ -59,6 +60,7 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
         layoutNodata = (LinearLayout) findViewById(R.id.layout_nodata);
 
         txt_productName = (TextView) findViewById(R.id.txt_productName);
+        txt_try = (TextView) findViewById(R.id.txt_try);
 
         recyclerProductList = (RecyclerView) findViewById(R.id.recyclerview_products);
         recyclerProductDetails = (RecyclerView) findViewById(R.id.recyclerview_productdetails);
@@ -77,6 +79,13 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
         recyclerProductDetails.setAdapter(productDetailsAdapter);
 
 
+        txt_try.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GetAllProducts();
+            }
+        });
+
         GetAllProducts();
     }
 
@@ -89,6 +98,7 @@ public class ProductListActivity extends AppCompatActivity implements CategoryLi
         if(categories.getProducts().size()==0){
             layoutMain.setVisibility(View.GONE);
             layoutNodata.setVisibility(View.VISIBLE);
+            Global.CustomToast(getApplicationContext() , getResources().getString(R.string.nodata));
         }
 
 
